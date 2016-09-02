@@ -1,0 +1,25 @@
+Defs-
+
+computer programs: text files (.java)
+code: assembly code
+only need test editor and notepad++
+compiling: translation of assembly code into computer readable bytecode
+
+Print statement format-
+
+1) pubic class name of .java file
+2) curly brackets 
+3) public statement void main (string[]args)
+4) curly brackets
+5) System.out.println ("statement");
+
+Research topics:
+
+Escape characters-
+
+if using " as part of art, then put \ in front 
+
+ASCII art-
+
+text based visual art made with computer characters 
+
