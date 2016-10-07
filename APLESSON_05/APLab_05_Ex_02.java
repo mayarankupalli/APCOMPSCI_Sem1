@@ -30,30 +30,36 @@ public class APLab_05_Ex_02
 		Double price4 = kb.nextDouble();
 		kb.nextLine();
 		
+		double subtotal = price1 + price2 + price3 + price4;
+		double discount = discnt(subtotal);
+		double tax = .10*subtotal; 
+		double total = subtotal - discount + tax;
+		
+		
 		System.out.println("<<<<<<<<<<<<<<<__Receipt__>>>>>>>>>>>>>>>>>");
 		form.format(item1, price1);
 		form.format(item2, price2);
 		form.format(item3, price3);
 		form.format("Subtotal:", subtotal);
-		form.format("Tax:", tax);
+		form.format("Discount:", discount);
 		form.format("Total:", total);
+		
 		System.out.println("\n___________________________________________");
 		System.out.println("*        Thank you for your support         *");
 		
 	}
-	public static Double discount (double price1, double price2, double price3, double price4 )
+	public static double discnt (double subtotal)
 	{
-		double total = price1 + price2 + price3 + price4;
-		if(total >= 2000)
+		double discount = 0;
+		if(subtotal >= 2000)
 		{
-			total = total - (.15*total);
-			discount = 15%;
+			discount = 0.15 * subtotal;
 		}
-		if(total <= 2000)
+		if(subtotal <= 2000)
 		{
-			total = total;
-			discount = 0%;
+			discount = 0 * subtotal;
 		}
+		return discount;
 	}
 	public void format(String item, double price)
 	{
