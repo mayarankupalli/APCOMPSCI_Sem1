@@ -15,15 +15,19 @@ public class APLab_05_Ex_01
 	}
 	public static String rollDice (int p, int c)
 	{
-		String winner= "";
+		
 		if (p>c)
 		{
-			winner = "p";
+			return "p";
 		}
 		if (c>p)
 		{
-			winner = "c";
-		}	
-		return winner;
+			return "c";
+		}
+		else 
+		{
+			return "its a tie!";
+		}
+		
 	}
 }
