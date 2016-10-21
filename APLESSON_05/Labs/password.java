@@ -4,8 +4,7 @@ public class password
 	static Scanner kb;
 	public static void main(String[]args)
 	{
-		kb = new Scanner(System.in);
-		
+		kb = new Scanner(System.in);	
 		passCheck();
 		
 	}
@@ -13,22 +12,32 @@ public class password
 	public static void passCheck()
 	{
 		System.out.println("enter the username");
-		String choice = kb.next();
-		if(choice.equals("username"))
+		String username = kb.next();
+		System.out.println("enter the password");
+		String password = kb.next();
+		
+		if(username.equals("username") && password.equals("password"))
 		{
-			System.out.println("enter the password");
-			if (choice.equals("password"))
-				System.out.println("You are granted access!");
-			else
-				System.out.println("your password is incorrect");
-				
+			System.out.println("You are granted access!");	
 		}
 		else
 		{
-			System.out.println("your username incorrect");
-			passCheck();
-		}
+			if(username.equals(username))
+			{
+				System.out.println("your password is incorrect");
+				passCheck();
+			}
+			else if(password.equals(password))
+			{
+				System.out.println("your username is incorrect");
+				passCheck();
+			}
+			else
+			{
+				System.out.println("your username and password are incorrect");
+				passCheck();
+			}
 			
-		
+		}
 	}
 }
