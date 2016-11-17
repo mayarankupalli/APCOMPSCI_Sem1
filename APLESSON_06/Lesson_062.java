@@ -8,6 +8,7 @@ public class Lesson_062
 		//System.out.println(word.indexOf("S");
 		//System.out.println(word.substring(2));
 		//System.out.println(word.charAt(2));
+		// x%y means the remainder of x divided by a y
 		
 		Scanner kb = new Scanner(System.in);
 		System.out.println("please enter a word" );

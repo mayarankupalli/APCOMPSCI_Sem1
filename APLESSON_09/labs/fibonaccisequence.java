@@ -4,20 +4,22 @@ public class fibonaccisequence
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		int[] seq = new int[10];
+		
 		System.out.println("please enter your starting number ");
-		int start = kb.next();
+		int start = kb.nextInt();
 		System.out.println("enter your sequence size ");
-		int seq = kb.next();
+		int size = kb.nextInt();
+		
+		int[] seq = new int[size];
 	
 		for(int i = 0; i < seq.length; i++)
 		{
-			if(i = 0 || i = 1)
-				seq[i] = start
-			
+			if(i == 0 || i == 1)
+				seq[i] = start;
 			else
-				seq[i] = 
-			System.out.println(seq[i] + " ");
+				seq[i] = seq[i-1] + seq[i-2];
+			
+			System.out.print(seq[i] + " ");
 		}
 		
 	}
