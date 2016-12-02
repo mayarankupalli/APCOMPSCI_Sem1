@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 public class ExpressionSolver
 {
 	public static void main(String[]args)
@@ -9,13 +10,13 @@ public class ExpressionSolver
 		System.out.println("please enter an equation: ");
 		String expression = kb.nextLine();
 		
-		ArrayList<String>equation = new ArrayList<>(Arrays.asList(expression.split(" ")));
+		ArrayList <String> equation = new ArrayList<>(Arrays.asList(expression.split(" ")));
 		
 		doEquation(equation);
 		
 	}
 	
-	public static void doEquation(int n)
+	public static void doEquation(ArrayList<String> equation)
 	{
 		int i = 0;
 		while(i < equation.size())
@@ -36,6 +37,7 @@ public class ExpressionSolver
 			i++;
 		}
 		
+		i = 0;
 		while(i < equation.size())
 		{
 			if(i < equation.size() && equation.get(i).equals("+") || equation.get(i).equals("-"))
