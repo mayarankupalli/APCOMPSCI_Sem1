@@ -8,28 +8,27 @@ public class gamegun
 	
 	public static void main(String[]args)
 	{
-		int bulletCount = 96;
-		int shotCount = 0;
-		String[]clip = new String[CLIPSIZE]; 
+		bulletCount = 96;
+		shotCount = 0;
+		clip = new String[CLIPSIZE]; 
 		resetClip();
 		
 		while(bulletCount > 0 || shotCount > 0)
 		{
 			Scanner kb = new Scanner(System.in);
-			System.out.println("action");
+			System.out.println("Action :");
 			String action = kb.next();
 			if(action.equals("R"))
 			{
-				
 				reload();
 			}
 			if(action.equals("S"))
 			{
-				shoot();
+				System.out.println(shoot());
 			}
+			printClip();
 		}
-		
-		printClip();
+		System.out.println("Out of Bullets!!!");
 	}
 	
 	public static void resetClip()
@@ -75,11 +74,11 @@ public class gamegun
 	
 	public static void printClip()
 	{
-		String output = " ";
-		System.out.println("bullets" + "\t" + bulletCount + "\n" + "clip" + "\t");
+		String output = "";
+		output += "Bullets: " + "\t" + bulletCount + "\n" + "Clip: " + "\t";
 		for(int i = 0; i < CLIPSIZE; i++)
 		{
-			clip[i] = output;
+			output += clip[i];
 		}
 		System.out.println(output);
 	}
