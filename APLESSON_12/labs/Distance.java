@@ -46,7 +46,7 @@ public class Distance
 	}
 	
 	//Accessors
-	public double MilesPerHour()
+	public double Distance()
 	{
 		
 		distance = Math.sqrt((xTwo-xOne)*(xTwo-xOne)+(yTwo-yOne)*(yTwo-yOne));
