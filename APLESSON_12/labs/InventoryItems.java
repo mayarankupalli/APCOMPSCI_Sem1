@@ -4,7 +4,7 @@ public class InventoryItems
 	private String name;
 	private String category;
 	private int UPC;
-	private int price;
+	private String price;
 	
 	public InventoryItems(String Man, String nam)
 	{
@@ -12,31 +12,35 @@ public class InventoryItems
 		name = nam;
 		category = "undefined";
 		price = "undefined";
-		UPC = (int)(Math.random() * 1000000) + 1;
+		UPC = (int)(Math.random() * 1000000000) + 1;
 	}
 	
-	public InventoryItems(String Man, String nam, String cat, int pri)
+	public InventoryItems(String Man, String nam, String cat, String pri)
 	{
 		Manufacturer = Man;
 		name = nam;
 		category = cat;
 		price = pri;
-		UPC = (int)(Math.random() * 1000000) + 1;
+		UPC = (int)(Math.random() * 1000000000) + 1;
 	}
 
 	
 	
-	public void setavatar(String a)
+	public void setprice(String pri)
 	{
-		avatar = a;
+		price = pri;
 	}	
-	
+	public void setcategory(String cat)
+	{
+		category = cat;
+	}
 	public String toString()
 	{
-		return "Customer Info...\nFirstName: " + firstName + 
-								"\nLastName: " + lastName +
-								"\nAvatar: " + avatar +
-								"\nUser ID#: " + userID;
+		return "Inventory Info...\nManufacturer: " + Manufacturer + 
+								"\nname: " + name +
+								"\ncategory: " + category +
+								"\nprice: " + price +
+								"\nUPC: " + UPC;
 		
 	}
 }
