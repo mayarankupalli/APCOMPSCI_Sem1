@@ -18,6 +18,11 @@ public class Bill extends Money
 		
 	}
 	
+	public String scan()
+	{
+		return face;
+	}
+	
 	public String toString()
 	{
 		return "face: " + face + "\n" +

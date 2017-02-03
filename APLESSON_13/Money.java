@@ -18,6 +18,8 @@ public abstract class Money
 		this.count = 0;
 	}
 	
+	public abstract String scan();
+	
 	public void setCount(int c)
 	{
 		this.count = c;
