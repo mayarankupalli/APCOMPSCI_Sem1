@@ -1,81 +1,89 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+
 public class ToyStore
 {
-	public static void main(String[]args)
-	{
-		ArrayList<Toy> inventory = new ArrayList<Toy>();
-		inventory.add(new Car("hotwheel"));
-		inventory.add(new Car("pennyracer"));
-		inventory.add(new Car("matchbox"));
-		inventory.add(new Car("pullback"));
-		inventory.add(new AFigure("starwars"));
-		inventory.add(new AFigure("G.I.Joe"));
-		
-		Scanner kb = new Scanner(System.in);
-	}
+	ArrayList <Toy> toyList;
 	
 	public ToyStore()
 	{
-		toyList = {};
+		toyList = new ArrayList<Toy>();
 	}
 	
-	public ToyStore(String t)
+	public ToyStore(String ts)
 	{
-		toyList = t;
+		loadToys(ts);
 	}
 	
-	public static void loadToys(String ts)
+	public void loadToys(String ts)
 	{
-		for(i = 0, i < toys.length, i++)
-	}
-	
-	public static void getThatToy(String nm)
-	{
-		for(each toy in toyList)
+		toyList = new ArrayList<Toy>();
+		ArrayList <String> toys = new ArrayList<String>(Arrays.asList(ts.split(", ")));
+		for(int i = 0; i < toys.size(); i+=2)
 		{
-			if(toy == nm)
+			String name = toys.get(i);
+			String type = toys.get(i+1);
+			Toy t = getThatToy(name);
+			if(t == null)
 			{
-				return toy;
+				if(type.equals("Car"))
+				{
+					toyList.add(new Car(name));
+				}
+				if(type.equals("AF"))
+				{
+					toyList.add(new AFigure(name));
+				}
 			}
 			else
+				t.setCount(t.getCount() + 1);
+		}
+	}
+	
+	public Toy getThatToy(String nm)
+	{
+		for(Toy t : toyList)
+		{
+			if (t.getName().equals(nm))
 			{
-				return null;
+				return t;
 			}
 		}
+		return null;
 	}
 	
-	public static void getMostFrequentToy()
+	public String getMostFrequentToy()
 	{
-		Scanner name = new Scanner(name);
-		Scanner max = new Scanner(Integer.MIN_VALUE);
-		for(each toy in toyList)
+		String name = "";
+		int max = Integer.MIN_VALUE;
+		for(Toy t : toyList)
 		{
-			if(max < toy.length)
-				return name;
-			if(max = toy.length)
-				return name;
-			if(max = name)
-				return name;
+			if(max < t.getCount())
+			{
+				max = t.getCount();
+				name = t.getName();
+			}
+			
 		}
+		return name;
 	}
 	
-	public static void getMostFrequentType()
+	public String getMostFrequentType()
 	{
 		int cars = 0;
 		int figures = 0;
 		
-		for(each toy in toylist)
+		for(Toy t : toyList)
 		{
-			if(Toy = Car)
+			if(t.getType().equals("Car"))
 			{
-				cars += 1;
+				cars++;
 			}
-			if(Toy = AFigure)
+			if(t.getType().equals("AFigure"))
 			{
-				figures += 1;
-			}
-			
+				figures++;
+			}	
 		}
 		
 		if(cars > figures)
@@ -94,6 +102,11 @@ public class ToyStore
 	
 	public String toString()
 	{
-		return toyList;
+		String output = "";
+		for(Toy t : toyList)
+		{
+			output += "" + t;
+		}
+		return "\nToys in inventory...\n" + output;
 	}
 }

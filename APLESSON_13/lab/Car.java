@@ -7,14 +7,12 @@ public class Car extends Toy
 	public Car()
 	{
 		super();
-		this.Car = "";
 		
 	}
 	
-	public Car(String n, String ca, int c)
+	public Car(String n)
 	{
-		super(n, c);
-		this.Car = ca;
+		super(n);
 		
 	}
 	
@@ -23,9 +21,5 @@ public class Car extends Toy
 		return "Car";
 	}
 	
-	public String toString()
-	{
-		return "Car: " + Car + "\n" +
-			   super.toString();
-	}
+	
 }

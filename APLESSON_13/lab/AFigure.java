@@ -7,14 +7,14 @@ public class AFigure extends Toy
 	public AFigure()
 	{
 		super();
-		this.AFigure = "";
+		
 		
 	}
 	
-	public AFigure(String n, String a, int c)
+	public AFigure(String n)
 	{
-		super(n, c);
-		this.AFigure = a;
+		super(n);
+	
 		
 	}
 	
@@ -23,9 +23,5 @@ public class AFigure extends Toy
 		return "Action Figure";
 	}
 	
-	public String toString()
-	{
-		return "AFigure: " + AFigure + "\n" +
-			   super.toString();
-	}
+	
 }
