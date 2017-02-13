@@ -3,14 +3,14 @@ public class ToyStoreRunner
 {
 	public static void main(String[]args)
 	{
-		String listoftoys = "";
+		String toysList = "";
 		Scanner kb = new Scanner(System.in);
 		System.out.println("enter in the list of toys: ");
-		listoftoys = kb.nextLine();
+		toysList = kb.nextLine();
 		
-		ToyStore TS = new ToyStore(listoftoys);
-		System.out.println(TS);
-		System.out.println("Most Frequent Toy: " + TS.getMostFrequentToy());
-		System.out.println("Most Frequent Type of Toy: " + TS.getMostFrequentType());
+		ToyStore toy = new ToyStore(toysList);
+		System.out.println(toy);
+		System.out.println("Most Frequent Toy: " + toy.getMostFrequentToy());
+		System.out.println("Most Frequent Type of Toy: " + toy.getMostFrequentType());
 	}
 }

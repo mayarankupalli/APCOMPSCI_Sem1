@@ -10,23 +10,13 @@ public abstract class PC extends GameSystem
 		super(p);
 	}
 	
-	public String getPlatform()
-	{
-		super();
-	}
-	
-	public int getSerialNo()
-	{
-		super();
-	}
-	
 	public String systemInput()
 	{
-		return "Keyboard and Mouse"
+		return "Keyboard and Mouse";
 	}
 	
 	public String toString()
 	{
-		return "Platform: " + platform + "\nSerail #: " + serialNo + "\nSystemInput: " + devices;
+		return super.toString() + "\nSystem Input: " + systemInput();
 	}
 }

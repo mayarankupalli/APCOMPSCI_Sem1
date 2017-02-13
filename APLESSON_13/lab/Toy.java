@@ -9,7 +9,7 @@ public abstract class Toy
 		this.count = 1;
 	}
 	
-	public Toy(String n, int c )
+	public Toy(String n)
 	{
 		this.name = n;
 		this.count = 1;
@@ -39,6 +39,6 @@ public abstract class Toy
 	
 	public String toString()
 	{
-		return "Name:" + name + "Count" + count;
+		return name + ":" + count;
 	}
 }

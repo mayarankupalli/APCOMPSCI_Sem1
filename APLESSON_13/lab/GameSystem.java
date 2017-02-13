@@ -1,7 +1,7 @@
 public class GameSystem
 {
-	private String platform;
-	private int serialNo;
+	String platform;
+	int serialNo;
 	
 	public GameSystem()
 	{
@@ -12,7 +12,7 @@ public class GameSystem
 	public GameSystem(String p)
 	{
 		this.platform = p;
-		this.serialNo = (int)(math.random() *10000000) + 1;
+		this.serialNo = (int)(Math.random() *10000000) + 1;
 	}
 	
 	public String getPlatform()
@@ -23,5 +23,9 @@ public class GameSystem
 	public int getSerialNo()
 	{
 		return serialNo;
+	}
+	public String toString()
+	{
+		return "Platform: " + platform + "\nSerial #: " + serialNo;
 	}
 }
