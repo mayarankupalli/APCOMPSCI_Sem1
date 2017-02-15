@@ -1,12 +1,21 @@
 public class StudentAdvance extends Advance
 {
+	public StudentAdvance()
+	{
+		super();
+	}
+	public StudentAdvance(int dl)
+	{
+		super(dl);
+	}
+	
 	public int getPrice()
 	{
-		price = price/2;
+		return super.getPrice()/2;
 	}
 	
 	public String toString()
 	{
-		return "Serial #: " + serialNo + " Price: " + price + "STUDENT ID REQUIRED: " + studentprice;
+		return super.toString() + "\nSTUDENT ID REQUIRED: ";
 	}
 }

@@ -1,7 +1,12 @@
 public class Walkup extends Ticket
 {
+	public Walkup()
+	{
+		super();
+	}
+	
 	public int getPrice()
 	{
-		price = 50.00;
+		return 50;
 	}
 }
