@@ -29,7 +29,7 @@ public class GMC implements Location
 	
 	public double[] getLoc()
 	{
-		double [] loc = {xco, yco};
-		return loc;
+		double [] Loc = {xco, yco};
+		return Loc;
 	}
 }

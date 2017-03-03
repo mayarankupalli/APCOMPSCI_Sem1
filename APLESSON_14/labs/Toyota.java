@@ -1,37 +1,37 @@
+import java.util.ArrayList;
 public class Toyota implements Location
 {
-	private String Location;
-	private double xco;
-	private double yco;
+	double[] loc;
 	
 	public Toyota()
 	{
-		Location = "";
-		xco = 0;
-		yco = 0;
+		loc = new double[2];
 	}
 	
-	public Toyota(double x, double y, String loc)
+	public Toyota(String l)
 	{
-		Location = loc;
-		xco = x;
-		yco = y;
+		loc = new double[2];
+		//set l as an array of String using split()
+		String[] locs = l.split(", ");
+		//add values from String array to loc as doubles using Double.parseDouble()
+		loc[0] = Double.parseDouble(locs[0]);
+		loc[1] = Double.parseDouble(locs[1]);
+		
 	}
 	
-	public double getID()
+	public int getID()
 	{
 		return (int)((Math.random() * 1000000) + 1);
 	}
 	
 	public void move(double x, double y)
 	{
-		xco = x;
-		yco = y;
+		loc[0] += x;
+		loc[1] += y;
 	}
 	
 	public double[] getLoc()
 	{
-		double [] loc = {xco, yco};
 		return loc;
 	}
 }

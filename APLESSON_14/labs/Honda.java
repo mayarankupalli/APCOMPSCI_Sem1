@@ -1,34 +1,30 @@
+import java.util.ArrayList;
 public class Honda implements Location
 {
-	private double xco;
-	private double yco;
-	
+	double[] loc;
 	public Honda()
 	{
-		xco = 0;
-		yco = 0;
+		loc = new double[2];
 	}
 	
-	public Honda(double x, double y)
+	public Honda(double[] l)
 	{
-		xco = x;
-		yco = y;
+		loc = l;
 	}
 	
-	public double getID()
+	public int getID()
 	{
 		return (int)((Math.random() * 1000000) + 1);
 	}
 	
 	public void move(double x, double y)
 	{
-		xco = x;
-		yco = y;
+		loc[0] = x;
+		loc[1] = y;
 	}
 	
 	public double[] getLoc()
 	{
-		double [] loc = {xco, yco};
 		return loc;
 	}
 }
