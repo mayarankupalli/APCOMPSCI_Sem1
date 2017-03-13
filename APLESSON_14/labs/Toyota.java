@@ -1,5 +1,9 @@
 import java.util.ArrayList;
+<<<<<<< HEAD
 public class Toyota implements Car
+=======
+public class Toyota implements Location
+>>>>>>> origin/master
 {
 	double[] loc;
 	
