@@ -1,9 +1,5 @@
 import java.util.ArrayList;
-<<<<<<< HEAD
-public class GMC implements Car
-=======
 public class GMC implements Location
->>>>>>> origin/master
 {
 	private double xco;
 	private double yco;
