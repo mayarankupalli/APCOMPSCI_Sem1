@@ -1,66 +1,62 @@
-import java.util.*;
-
-public class Satellite 
+import java.util.ArrayList;
+public class Satellite
 {
     public static void main(String[]args) 
 	{
-        ArrayList<Car> Locate = new ArrayList<>();
-        double[] position = new double[6];
-       
-	   for(int i = 0; i < 6; i++) 
-		{
-        	position[i] = Math.round((double)(Math.random() * 100) + 1);
-        }
-        
+        ArrayList<Location> locate = new ArrayList<>();
+
 		double[] hLoc = {5, 6};
-		
-        Locate.add(new Honda(hLoc));
-        Locate.add(new Toyota("8, 9"));
-        Locate.add(new GMC(3, 8));
-        int i = 0;
-       
-	   for(Car L : Locate) 
-		{
-        	L.move(position[i], position[i+1]);
-        	i += 2;
-        }
+        locate.add(new Honda(hLoc));
+        locate.add(new Toyota("8, 9"));
+        locate.add(new GMC(3, 8));
         
 		double[] home = {0, 0};
-        String printout = "==========================\n" + "\nStarting locations: ";
+        String printout = "==========================\n" + "Starting locations: ";
         
-		for(Car L : Locate) 
+		for(Location l : locate) 
 		{
-            printout += "\nLocation for " + L.getID() + ": (" + getLocation(L.getLoc()) + ")";
+            printout += "\nLocation for " + l.getID() + ": " + getLocation(l.getLoc());
+        }        
+		
+        printout += "\n\nDistance from home...";
+        
+		for(Location l : locate) 
+		{
+            printout += "\nDistance for " + l.getID() + ": "  + getDistance(l.getLoc(), home);
         }
 		
-        printout += "\n\n" + "==========================";
-        i = 0;
-        
-		for(Car L : Locate) 
+		printout += "\n\n==========================\n";
+		
+		for(Location l : locate) 
 		{
-            double[] newPos = L.getLoc();
-            double x = newPos[0], y = newPos[1];
-            printout += "\n\nAfter " + L.getID() + " moved (" + position[i] + ", " + position[i+1] + ")"
-            + "\nNew location: " + "(" + x + ", " + y + ")" + "\n";
-            i += 2;
+            double one = Math.random() * 99 + 1;
+			double two = Math.random() * 99 + 1;
+			l.move(one, two);
+			
+            printout += "\n\nAfter " + l.getID() + " moved (" + one + ", " + two + ")"
+            + "\nNew location: " + "(" + one + ", " + two + ")" + "\n";
+			
         }
-        printout += "\n" + "==========================" + "\nDistance from home...";
+		
+        printout += "\n\nDistance from home...";
         
-		for(Car L : Locate) 
+		for(Location l : locate) 
 		{
-            printout += "\n\nDistance for " + L.getID() + ": (" + getDistance(L.getLoc(), home)+ ")";
+            printout += "\nDistance for " + l.getID() + ": " + getDistance(l.getLoc(), home);
         }
+		
+		printout += "\n\n==========================\n";
 		
         System.out.println(printout);
     }
 	
-    public static double getDistance(double[] car, double[] home) 
+    public static String getDistance(double[] car, double[] home) 
 	{
-        return Math.round(Math.sqrt((Math.pow(car[0] - home[0], 2)+ Math.pow(car[1] - home[1], 2))));
+        return String.format("(%.2f)", Math.sqrt((Math.pow(car[0] - home[0], 2)+ Math.pow(car[1] - home[1], 2))));
     }
 	
     public static String getLocation(double[] Loc) 
 	{
-        return Loc[0] + ", " + Loc[1];
+        return String.format("(%.2f, %.2f)", Loc[0], Loc[1]);
     }
 }

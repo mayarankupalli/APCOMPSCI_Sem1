@@ -1,9 +1,17 @@
-public class Toyota extends Car
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Toyota extends Car 
 {
-    public Toyota(String Po) 
+	private double xco;
+	private double yco;
+	
+    public Toyota(String pos) 
 	{
-        String [] position = Po.split(", ");
-        location[0] = Double.parseDouble(position[0]);
-		location[1] = Double.parseDouble(position[1]);
+        super();
+        ArrayList<String> position = new ArrayList<>(Arrays.asList(pos.split(", ")));
+        Double posX = Double.parseDouble(position.get(0));
+		Double posY = Double.parseDouble(position.get(1));
+        move(posX, posY);
     }
+	
 }

@@ -1,7 +1,11 @@
-public class Honda extends Car
+public class Honda extends Car 
 {
-    public Honda(double[] Po) 
+    private double xco;
+	private double yco;
+	
+    public Honda(double[] pos) 
 	{
-		location = Po;
+        super();
+        move(pos[0], pos[1]);
     }
 }
