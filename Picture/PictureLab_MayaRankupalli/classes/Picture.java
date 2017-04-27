@@ -98,6 +98,71 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void keepOnlyBlue()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixel0bj : rowArray)
+		  {
+			  pixel0bj.setGreen(0);
+			  pixel0bj.setRed(0);
+		  }
+	  }
+  }
+  
+  public void negate()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixel0bj : rowArray)
+		  {
+			  int red = 225 - pixel0bj.getRed();
+			  int green = 225 - pixel0bj.getGreen();
+			  int blue = 225 - pixel0bj.getBlue();
+			  pixel0bj.setRed(red);
+			  pixel0bj.setGreen(green);
+			  pixel0bj.setBlue(blue);
+			  
+		  }
+	  }
+  }
+  
+  public void grayScale()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixel0bj : rowArray)
+		  {
+			  int value = (pixel0bj.getBlue()+pixel0bj.getGreen()+pixel0bj.getRed())/3;
+			  pixel0bj.setGreen(value);
+			  pixel0bj.setBlue(value);
+			  pixel0bj.setRed(value);
+		  }
+	  }
+  }
+  
+  public void fixUnderwater()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixel0bj : rowArray)
+		  {
+			  int red = pixel0bj.getRed();
+			  int blue = pixel0bj.getBlue();
+			  int green = pixel0bj.getGreen();
+			  int diffromblue = Math.abs(blue-(red+green))
+			  pixel0bj.setBlue(blue-diffromblue);
+			  pixel0bj.setGreen(green+diffromblue);
+			  pixel0bj.setRed(red+diffromblue);
+			  
+		  }
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
