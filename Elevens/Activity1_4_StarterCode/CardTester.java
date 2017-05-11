@@ -7,7 +7,15 @@ public class CardTester {
 	 * The main method in this class checks the Card operations for consistency.
 	 *	@param args is not used.
 	 */
-	public static void main(String[] args) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+	public static void main(String[] args) 
+	{
+		Card one = new Card("3", "Spades" ,3);
+		Card two = new Card("5", "Hearts" , 3);
+		Card three = new Card("1", "Spades", 3);
+		
+		System.out.println("Does two match three?" + two.matches(three));
+		System.out.println("Does one match two?" + one.matches(two));
+		System.out.println("Card two:" + two.toString());
+		System.out.println("Suit of Card three: " + three.suit());
 	}
 }
